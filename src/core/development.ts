@@ -1,10 +1,10 @@
-import { Context, Telegraf } from "telegraf";
+import { Context, Telegraf, Scenes } from "telegraf";
 import { Update } from "telegraf/typings/core/types/typegram";
 import createDebug from "debug";
 
 const debug = createDebug("bot:dev");
 
-const development = async (bot: Telegraf<Context<Update>>) => {
+const development = async (bot: Telegraf<Scenes.WizardContext>) => {
   const botInfo = (await bot.telegram.getMe()).username;
   debug("Bot runs in development mode");
   debug(`${botInfo} deleting webhook`);
