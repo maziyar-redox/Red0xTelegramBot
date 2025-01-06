@@ -12,6 +12,7 @@ export const superUserWizard_ADD_BOOK = new Scenes.WizardScene<Scenes.WizardCont
 const messages = [
     "With Cover",
     "Without Cover",
+    "Bulk Without Cover",
     "⬅️ Back"
 ];
 
@@ -23,7 +24,7 @@ superUserWizard_ADD_BOOK.enter(async (ctx) => {
         reply_markup: {
             "keyboard": [
                 ["With Cover", "Without Cover"],
-                ["⬅️ Back"],
+                ["⬅️ Back", "Bulk Without Cover"],
             ],
             "one_time_keyboard": true,
             "resize_keyboard": true
@@ -44,6 +45,11 @@ superUserWizard_ADD_BOOK.hears("With Cover", async (ctx) => {
 superUserWizard_ADD_BOOK.hears("Without Cover", async (ctx) => {
     await ctx.scene.leave();
     return await ctx.scene.enter("SUPER_USER_SCENE_ADD_BOOK_WITHOUT_COVER");
+});
+
+superUserWizard_ADD_BOOK.hears("Bulk Without Cover",  async (ctx) => {
+    await ctx.scene.leave();
+    return await ctx.scene.enter("SUPER_USER_SCENE_BULK_ADD_BOOK_WITHOUT_COVER");
 });
 
 superUserWizard_ADD_BOOK.on("message", async (ctx) => {

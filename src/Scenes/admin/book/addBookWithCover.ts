@@ -21,14 +21,14 @@ const messages = [
 const bookInfo: {
     name: string | undefined;
     description: string | undefined;
-    messageId: number | string;
+    messageId: string;
     uniqueId: number | undefined | string;
     author: number | string | undefined;
     cover: number | string | undefined;
 } = {
     cover: "",
     name: "",
-    messageId: 0,
+    messageId: "",
     author: 0,
     description: "",
     uniqueId: ""
@@ -43,9 +43,15 @@ superUserWizard_ADD_BOOK_WITH_COVER.on("document", async (ctx) => {
 });
 
 superUserWizard_ADD_BOOK_WITH_COVER.on("photo", async (ctx) => {
-    bookInfo.cover = ctx.message.photo[ctx.message.photo.length - 1].file_id;
-    await ctx.scene.leave();
-    return await ctx.scene.enter("SUPER_USER_SCENE_ADD_BOOK_WITH_COVER_AGREE");
+    if(bookInfo.messageId.length === 0) {
+        await ctx.reply("Invalid Command!");
+        await ctx.scene.leave();
+        return await ctx.scene.enter("SUPER_USER_SCENE_ADD_BOOK_WITH_COVER");
+    } else {
+        bookInfo.cover = ctx.message.photo[ctx.message.photo.length - 1].file_id;
+        await ctx.scene.leave();
+        return await ctx.scene.enter("SUPER_USER_SCENE_ADD_BOOK_WITH_COVER_AGREE");
+    };
 });
 
 superUserWizard_ADD_BOOK_WITH_COVER.enter(async (ctx) => {

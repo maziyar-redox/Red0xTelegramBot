@@ -10,6 +10,10 @@ import {
   superUserWizard_ADD_BOOK_WITH_COVER,
   superUserWizard_ADD_BOOK_WITH_COVER_AGREE,
   superUserWizard_MAIN_MENU,
+  superUserWizard_BULK_ADD_BOOK_WITHOUT_COVER,
+  superUserWizard_BULK_ADD_BOOK_WITHOUT_COVER_AGREE,
+  userWizard_MAIN_MENU,
+  userWizard_SEND_MESSAGE
 } from "./Scenes";
 
 const BOT_TOKEN = process.env.BOT_TOKEN || "";
@@ -24,12 +28,16 @@ const stage = new Scenes.Stage<Scenes.WizardContext>([
   superUserWizard_ADD_BOOK_WITH_COVER,
   superUserWizard_ADD_BOOK_WITH_COVER_AGREE,
   superUserWizard_MAIN_MENU,
+  superUserWizard_BULK_ADD_BOOK_WITHOUT_COVER,
+  superUserWizard_BULK_ADD_BOOK_WITHOUT_COVER_AGREE,
+  userWizard_MAIN_MENU,
+  userWizard_SEND_MESSAGE
 ]);
 
 bot.use(session());
 bot.use(stage.middleware());
 
-bot.command("about", about());
+//bot.command("about", about());
 bot.start(start());
 
 //prod mode (Vercel)

@@ -11,7 +11,8 @@
     "build": "ncc build src/index.ts -o public -m",
     "prettier": "prettier --write 'src/**/*.ts'",
     "lint": "tsc --noemit",
-    "start": ""
+    "start": "DEBUG=bot* dotenv -- nodemon -e js -x node public/index.js",
+    "startWindows": "@powershell -Command $env:DEBUG='bot*';dotenv -- -- nodemon -e js -x node public/index.js"
   },
   "dependencies": {
     "@vercel/node": "^5.0.2",
