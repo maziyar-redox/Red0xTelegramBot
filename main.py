@@ -2,6 +2,7 @@ import sys
 import asyncio
 import logging
 import traceback
+import os
 import logging.handlers as handlers
 from aiohttp import web
 from pyrogram import idle
@@ -11,11 +12,13 @@ from Red0xBot.bot import Red0xBot
 from Red0xBot.server import web_server
 from Red0xBot.bot.clients import initialize_clients
 
+os.mkdir("Red0xBot/tmp")
+
 logging.basicConfig(
     level=logging.INFO,
     datefmt="%d/%m/%Y %H:%M:%S",
     format="[%(asctime)s] {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s",
-    handlers=[logging.StreamHandler(stream=sys.stdout), handlers.RotatingFileHandler("red0xbot.log", mode="a", maxBytes=104857600, backupCount=2, encoding="utf-8")]
+    handlers=[logging.StreamHandler(stream=sys.stdout), handlers.RotatingFileHandler("Red0xBot/tmp/red0xbot.log", mode="a", maxBytes=104857600, backupCount=2, encoding="utf-8")]
 )
 
 logging.getLogger("aiohttp").setLevel(logging.ERROR)
