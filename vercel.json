@@ -1,11 +1,24 @@
 {
-  "version": 2,
-  "public": true,
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "api/index.ts"
-    }
-  ],
-  "redirects": [{ "source": "/", "destination": "/api", "permanent": false }]
+    "$schema": "https://openapi.vercel.sh/vercel.json",
+    "version": 2,
+    "public": true,
+    "builds": [
+        {
+            "src": "Red0xBot/__main__.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "Red0xBot/__main__.py"
+        }
+    ],
+    "redirects": [
+        {
+            "source": "/",
+            "destination": "/status",
+            "permanent": true
+        }
+    ]
 }
