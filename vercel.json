@@ -13,12 +13,5 @@
             "src": "/(.*)",
             "dest": "Red0xBot/__main__.py"
         }
-    ],
-    "redirects": [
-        {
-            "source": "/",
-            "destination": "/status",
-            "permanent": true
-        }
     ]
 }
