@@ -3,21 +3,24 @@ from time import sleep
 from pyrogram import filters, Client
 from pyrogram.types import Message, CallbackQuery
 from pyrogram.enums.parse_mode import ParseMode
+from datetime import datetime, timezone
 
 from Red0xBot.bot import Red0xBot
 from Red0xBot.config import Telegram
 from Red0xBot.utils.translation import BUTTON_ADMIN
+from Red0xBot.db.csv_db import add_record, mainFunc, searchFunc
 
 SCENES = {
     "MAIN_MENU": 0,
     "PENDING_REPLY": 1,
     "PENDING_BOOK": 2,
     "PENDING_BOOK_CAPTION": 3,
-    "PENDING_PAPER": 4,
-    "PENDING_PAPER_CAPTION": 5,
-    "PENDING_BULK_BOOK": 6,
-    "PENDING_BULK_BOOK_CAPTION": 7,
-    "PENDING_BULK_BOOK_SEND": 8
+    "PENDING_BOOK_TOPIC": 4,
+    "PENDING_PAPER": 5,
+    "PENDING_PAPER_CAPTION": 6,
+    "PENDING_BULK_BOOK": 7,
+    "PENDING_BULK_BOOK_CAPTION": 8,
+    "PENDING_BULK_BOOK_TOPIC": 9
 }
 
 COMMANDS = [
@@ -208,7 +211,8 @@ async def sendDm(bot: Client, message: Message):
 
 SINGLE_BOOK_PROPERTIES: dict[str, str] = {
     "book_id": "",
-    "book_caption": ""
+    "book_caption": "",
+    "book_topic": ""
 }
 
 def singleBook_scene_filter(_, __, message: Message):
@@ -220,8 +224,28 @@ singleBook_scene = filters.create(singleBook_scene_filter)
 
 @Red0xBot.on_message((filters.document) & filters.private & singleBook_scene & filters.user(Telegram.OWNER_ID))
 async def singleBook(bot: Client, message: Message):
-    user_states[Telegram.OWNER_ID] = SCENES["PENDING_BOOK_CAPTION"]
+    user_states[Telegram.OWNER_ID] = SCENES["PENDING_BOOK_TOPIC"]
     SINGLE_BOOK_PROPERTIES["book_id"] = message.document.file_id
+    return await message.reply_text(
+        text="Now send your topic.",
+        quote=True,
+        disable_web_page_preview=True,
+        reply_markup=BUTTON_ADMIN.BACK_BUTTONS
+    )
+
+#---------- send single book topic function ----------#
+
+def singleBookTopic_scene_filter(_, __, message: Message):
+    if user_states.get(Telegram.OWNER_ID) != SCENES["PENDING_BOOK_TOPIC"]:
+        return False
+    return True
+
+singleBookTopic_scene = filters.create(singleBookTopic_scene_filter)
+
+@Red0xBot.on_message((filters.text) & filters.private & singleBookTopic_scene & filters.user(Telegram.OWNER_ID))
+async def singleBookTopic(bot: Client, message: Message):
+    user_states[Telegram.OWNER_ID] = SCENES["PENDING_BOOK_CAPTION"]
+    SINGLE_BOOK_PROPERTIES["book_topic"] = message.text
     return await message.reply_text(
         text="Now send your caption.",
         quote=True,
@@ -242,13 +266,47 @@ singleBookCaption_scene = filters.create(singleBookCaption_scene_filter)
 async def singleBookCaption(bot: Client, message: Message):
     user_states[Telegram.OWNER_ID] = SCENES["MAIN_MENU"]
     SINGLE_BOOK_PROPERTIES["book_caption"] = message.text
+    isTrue = mainFunc()
+    if isTrue == True:
+        pass
+    else:
+        SINGLE_BOOK_PROPERTIES["book_id"] = ""
+        SINGLE_BOOK_PROPERTIES["book_caption"] = ""
+        SINGLE_BOOK_PROPERTIES["book_topic"] = ""
+        return await message.reply_text(
+            text="There was an error while processing your book",
+            quote=True,
+            disable_web_page_preview=True,
+            reply_markup=BUTTON_ADMIN.START_BUTTONS
+        )
+    res = searchFunc(SINGLE_BOOK_PROPERTIES["book_caption"])
+    if res is None:
+        pass
+    else:
+        SINGLE_BOOK_PROPERTIES["book_id"] = ""
+        SINGLE_BOOK_PROPERTIES["book_caption"] = ""
+        SINGLE_BOOK_PROPERTIES["book_topic"] = ""
+        user_states[Telegram.OWNER_ID] = SCENES["MAIN_MENU"]
+        return await message.reply_text(
+            text="Your book is exist in database\nYou may try with another book",
+            quote=True,
+            disable_web_page_preview=True,
+            reply_markup=BUTTON_ADMIN.START_BUTTONS
+        )
+    add_record(
+        book_name = SINGLE_BOOK_PROPERTIES["book_caption"],
+        created_at = datetime.now(timezone.utc),
+        author = f"{Telegram.OWNER_ID}",
+        topic = SINGLE_BOOK_PROPERTIES["book_topic"],
+    )
     await bot.send_document(
         chat_id=Telegram.BOOK_CHANNEL,
         document=SINGLE_BOOK_PROPERTIES.get("book_id"), # type: ignore
-        caption=f"{SINGLE_BOOK_PROPERTIES.get("book_caption")}\n\n#book\n\n@Red0x_Library"
+        caption=f"{SINGLE_BOOK_PROPERTIES.get("book_caption")}\n\n#book {SINGLE_BOOK_PROPERTIES.get("book_topic")}\n\n@Red0x_Library"
     )
     SINGLE_BOOK_PROPERTIES["book_id"] = ""
     SINGLE_BOOK_PROPERTIES["book_caption"] = ""
+    SINGLE_BOOK_PROPERTIES["book_topic"] = ""
     return await message.reply_text(
         text="Your book has been sent to channel",
         quote=True,
@@ -341,8 +399,28 @@ bulkBook_scene = filters.create(bulkBook_scene_filter)
 
 @Red0xBot.on_message((filters.document) & filters.private & bulkBook_scene & filters.user(Telegram.OWNER_ID))
 async def bulkBook(bot: Client, message: Message):
-    user_states[Telegram.OWNER_ID] = SCENES["PENDING_BULK_BOOK_CAPTION"]
+    user_states[Telegram.OWNER_ID] = SCENES["PENDING_BULK_BOOK_TOPIC"]
     SINGLE_BOOK_PROPERTIES["book_id"] = message.document.file_id
+    return await message.reply_text(
+        text="Now send your topic.",
+        quote=True,
+        disable_web_page_preview=True,
+        reply_markup=BUTTON_ADMIN.BACK_BUTTONS
+    )
+
+#---------- send bulk book topic function ----------#
+
+def bulkBookTopic_scene_filter(_, __, message: Message):
+    if user_states.get(Telegram.OWNER_ID) != SCENES["PENDING_BULK_BOOK_TOPIC"]:
+        return False
+    return True
+
+bulkBookTopic_scene = filters.create(bulkBookTopic_scene_filter)
+
+@Red0xBot.on_message((filters.text) & filters.private & bulkBookTopic_scene & filters.user(Telegram.OWNER_ID))
+async def bulkBookTopic(bot: Client, message: Message):
+    user_states[Telegram.OWNER_ID] = SCENES["PENDING_BULK_BOOK_CAPTION"]
+    SINGLE_BOOK_PROPERTIES["book_topic"] = message.text
     return await message.reply_text(
         text="Now send your caption.",
         quote=True,
@@ -363,10 +441,25 @@ bulkBookCaption_scene = filters.create(bulkBookCaption_scene_filter)
 async def bulkBookCaption(bot: Client, message: Message):
     user_states[Telegram.OWNER_ID] = SCENES["PENDING_BULK_BOOK"]
     SINGLE_BOOK_PROPERTIES["book_caption"] = message.text
+    res = searchFunc(SINGLE_BOOK_PROPERTIES["book_caption"])
+    if res is None:
+        pass
+    else:
+        SINGLE_BOOK_PROPERTIES["book_id"] = ""
+        SINGLE_BOOK_PROPERTIES["book_caption"] = ""
+        SINGLE_BOOK_PROPERTIES["book_topic"] = ""
+        user_states[Telegram.OWNER_ID] = SCENES["PENDING_BULK_BOOK"]
+        return await message.reply_text(
+            text="Your book is exist in database\nYou may try with another book",
+            quote=True,
+            disable_web_page_preview=True,
+            reply_markup=BUTTON_ADMIN.BULK_BOOK_BUTTONS
+        )
     i["number"] = i["number"] + 1
     BULK_BOOK_PROPERTIES_ARR.insert(i["number"], SINGLE_BOOK_PROPERTIES.copy())
     SINGLE_BOOK_PROPERTIES["book_caption"] = ""
     SINGLE_BOOK_PROPERTIES["book_id"] = ""
+    SINGLE_BOOK_PROPERTIES["book_topic"] = ""
     return await message.reply_text(
         text=f"Added[{i['number']}]\nSend your next book",
         quote=True,
@@ -386,11 +479,27 @@ sendBulkBook_scene = filters.create(sendBulkBook_scene_filter)
 @Red0xBot.on_message((filters.text) & filters.private & sendBulkBook_scene & filters.user(Telegram.OWNER_ID))
 async def sendBulkBook(bot: Client, message: Message):
     user_states[Telegram.OWNER_ID] = SCENES["MAIN_MENU"]
+    isTrue = mainFunc()
+    if isTrue == True:
+        pass
+    else:
+        return await message.reply_text(
+            text="There was an error while processing your book",
+            quote=True,
+            disable_web_page_preview=True,
+            reply_markup=BUTTON_ADMIN.START_BUTTONS
+        )
     for b in BULK_BOOK_PROPERTIES_ARR:
+        add_record(
+            book_name = b["book_caption"],
+            created_at = datetime.now(timezone.utc),
+            author = f"{Telegram.OWNER_ID}",
+            topic = b["book_topic"],
+        )
         await bot.send_document(
             chat_id=Telegram.BOOK_CHANNEL,
             document=b["book_id"], # type: ignore
-            caption=f"{b["book_caption"]}\n\n#book\n\n@Red0x_Library"
+            caption=f"{b["book_caption"]}\n\n#book {b["book_topic"]}\n\n@Red0x_Library"
         )
         sleep(0.5)
     i["number"] = 0
