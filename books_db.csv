@@ -1,9 +1,4 @@
 book_name,created_at,author,topic
-Math,2025-07-24 08:44:38.166001+00:00,7534242481,#engineering #mathematics
-math,2025-07-24 08:53:23.913902+00:00,7534242481,#mathematics #engineering
-amar,2025-07-24 08:53:24.882418+00:00,7534242481,#amar
-awefawef,2025-07-24 12:04:21.197240+00:00,7534242481,math
-marh23,2025-07-24 12:11:16.520672+00:00,7534242481,#amar
 The algorithm design manual (2020),2025-07-24 12:57:35.673096+00:00,7534242481,#cs #algorithm #software
 Introduction to mechatronics and Measurement systems 2020,2025-07-24 12:57:36.498661+00:00,7534242481,#mechatronics #physics #cs #ai #mechanical_engineering
 123vwa,2025-07-24 13:01:07.216850+00:00,7534242481,awaefawefawe
@@ -194,3 +189,85 @@ mml-book,2025-07-24 17:41:23.941152+00:00,7534242481,#ai #machine_learning #soft
 Moadelate differential,2025-07-24 17:41:24.644505+00:00,7534242481,#diffrenetial_equations #mathematics #engineering #physics #cs
 Modern API Development with Spring and Spring Boot,2025-07-24 17:41:25.339332+00:00,7534242481,#java #spring #programming #web #software #cs
 Modern Graph Theory Algorithms with Python (2024),2025-07-24 17:41:26.023001+00:00,7534242481,#mathematics #python #algorithm #data_structure #graph #discrete_mathematics #software #cs
+modern vim,2025-07-25 20:45:02.513259+00:00,7534242481,#software #editor #programming #vim
+Modern_DevOps_Practices_Implement_and_secure_DevOps_in_the_public,2025-07-25 20:45:04.172148+00:00,7534242481,#devops #server #network #cs #programming #software
+NetCat for pentesters,2025-07-25 20:45:05.380017+00:00,7534242481,#network #security #netcat
+Network Programming With Go,2025-07-25 20:45:06.220209+00:00,7534242481,#go #programming #cs #network #security #software
+Network_Analysis_Using_Wireshark_2_Cookbook,2025-07-25 20:45:07.083032+00:00,7534242481,#wireshark #network #security #software
+Networking_All_in_One_For_Dummies_Doug_Lowe,2025-07-25 20:45:08.034486+00:00,7534242481,#network #software #server
+"Nikolaus Correll, Bradley Hayes, Christoffer Heckman, Alessandro - Introduction to Autonomous Robots_ Mechanisms, Sensors, Actuators, and Algorithms",2025-07-25 20:45:12.056564+00:00,7534242481,#algorithm #mathematics #software #cs #programming
+No Starch Press Algorithmic Thinking,2025-07-25 20:45:12.959191+00:00,7534242481,#algorithm #mathematics #cs
+Node.js Design Patterns,2025-07-25 20:45:13.680054+00:00,7534242481,#nodejs #js #software #programming #cs
+NodeJs Notes For Professionals,2025-07-25 20:45:14.902679+00:00,7534242481,#nodejs #programming #cs #software
+Nodejs-Tutorial,2025-07-25 20:45:15.659891+00:00,7534242481,#nodejs #cs #software #programming
+Object Design Style Guide,2025-07-25 20:45:20.821549+00:00,7534242481,#software #programming
+Optical Networks,2025-07-25 20:45:21.641865+00:00,7534242481,#cs #electronic #physics #mathematics
+O'Reilly - HTTP - The Definitive Guide,2025-07-25 20:45:22.540417+00:00,7534242481,#network #http #cs
+Packt Full Stack Django and React,2025-07-25 20:45:23.261151+00:00,7534242481,#django #python #js #react #programming
+persian js,2025-07-25 20:53:11.182052+00:00,7534242481,#js #programming #software
+programming and proof,2025-07-25 20:53:11.938421+00:00,7534242481,#mathematics #cs #software #programming #robotic #engineering
+postgresql-16-US,2025-07-25 20:53:12.592816+00:00,7534242481,#db #postgresql #cs #software
+PowerShell in Depth,2025-07-25 20:53:13.282592+00:00,7534242481,#powershell #os #cs #programming
+Practical JavaScript DOM Scripting and Ajax,2025-07-25 20:53:13.933706+00:00,7534242481,#js #programming #software
+Practical Vim,2025-07-25 20:53:14.605503+00:00,7534242481,#vim #editor #software
+Privilege escalation automated script Windows & Linux,2025-07-25 20:53:18.453533+00:00,7534242481,#security #os
+Pro Bash Programming,2025-07-25 20:53:19.129137+00:00,7534242481,#bash #os #programming
+Pro Go,2025-07-25 20:53:20.051342+00:00,7534242481,#go #programming #software #cs
+Pro JavaScript RIA Techniques,2025-07-25 20:53:20.758001+00:00,7534242481,#js #software #programming
+Pro JavaScript Techniques,2025-07-25 20:53:21.419522+00:00,7534242481,#js #software #programming
+Pro_TypeScript_2nd,2025-07-25 20:53:25.264557+00:00,7534242481,#ts #programming #software
+Programming in Lua (Roberto Ierusalimschy),2025-07-25 20:53:25.997293+00:00,7534242481,#lua #programming #software
+Python _ Pandas - Beginner to Intermediate,2025-07-25 20:53:26.755042+00:00,7534242481,#python #software #programming
+Python Coding for Beginners,2025-07-25 20:53:27.461256+00:00,7534242481,#python #programming
+Python Notes For Professionals,2025-07-25 21:00:50.137614+00:00,7534242481,#python #programming #software
+Python Programming for Beginners Crash Course with Hands-On,2025-07-25 21:00:50.854068+00:00,7534242481,#python #programming #software
+Python Tricks,2025-07-25 21:00:51.536986+00:00,7534242481,#python #programming #software
+Quantum mechanics,2025-07-25 21:00:52.201260+00:00,7534242481,#physics #quantum_physics
+REST API Design Rulebook,2025-07-25 21:00:52.873706+00:00,7534242481,#api #programming #software
+Rust in Action,2025-07-25 21:00:53.560046+00:00,7534242481,#software #rust #programming
+Sachi_Nandan_Mohanty_editor_Decision_Making_And_Problem_Solving,2025-07-25 21:00:57.357591+00:00,7534242481,#other
+"Scripting_Automation_with_Bash,_PowerShell,_and_Python",2025-07-25 21:00:58.082119+00:00,7534242481,#python #bash #powershell #os #network #server
+"Security_Testing_with_Kali_Nethunter_by_Dieterle,_Daniel_W_2017",2025-07-25 21:00:58.776093+00:00,7534242481,#os #linux #security
+Smith - Build Your Own Redis with CC++(2023),2025-07-25 21:00:59.459466+00:00,7534242481,#db #redis #cpp #programming #software #mathematics #data_structure #algorithm
+"Software Engineering A Practitioner's Approach, 9th Edition by Roger Pressman, Bruce Maxim",2025-07-25 21:01:00.128807+00:00,7534242481,#software #programming #engineering
+Software Engineering,2025-07-25 21:07:58.153119+00:00,7534242481,#software #programming #engineering
+SQL for Data Analysis,2025-07-25 21:07:58.876843+00:00,7534242481,#sql #algorithm #ai #software #cs
+"Stefan Thurner, Rudolf Hanel, Peter Klimek - Introduction to the Theory of Complex Systems",2025-07-25 21:07:59.544505+00:00,7534242481,#physics #mathematics
+Storytelling with Data,2025-07-25 21:08:00.276248+00:00,7534242481,#ai #algorithm #mathematics
+Strang G.-Linear algebra and its applications,2025-07-25 21:08:00.984739+00:00,7534242481,#algorithm #mathematics
+Structure_and_Interpretation_of_Computer_Programs_Javascript_Edition,2025-07-25 21:08:01.681456+00:00,7534242481,#js #algorithm #mathematics #data_structure
+Structure_and_Interpretation_of_Computer_Programs_SICP,2025-07-25 21:08:05.506964+00:00,7534242481,#software
+System Design Interview - An Insider’s Guide,2025-07-25 21:08:06.242427+00:00,7534242481,#cs #software
+Windows Terminal,2025-07-25 21:08:06.957471+00:00,7534242481,#os #network #internals
+The Art of Readable Code,2025-07-25 21:08:07.704900+00:00,7534242481,#software #programming #cs
+The Complete C++ & Python Manual - 19Ed 2024-2,2025-07-25 21:08:08.450940+00:00,7534242481,#python #cpp #programming #cs
+The Go Handbook,2025-07-25 21:08:12.408535+00:00,7534242481,#go #programming #software
+The Go Programming Language,2025-07-25 21:08:13.081867+00:00,7534242481,#go #software #programming
+The Go Workshop,2025-07-25 21:08:13.759158+00:00,7534242481,#go #programming #software
+The hacker playbook,2025-07-25 21:10:53.936421+00:00,7534242481,#security
+The hacker playbook 2,2025-07-25 21:10:54.614868+00:00,7534242481,#security
+The hacker playbook 3,2025-07-25 21:10:55.296385+00:00,7534242481,#security
+"The Pragmatic Programmer, 2nd Edition by Andrew Hunt, David Thomas-Addison-Wesley",2025-07-25 21:10:55.955471+00:00,7534242481,#mathematics #cs
+The Turner Diaries,2025-07-25 21:10:56.663947+00:00,7534242481,#history
+The_Hackers_Codex_Modern_Web_Application_Attacks_Demystified_by,2025-07-25 21:10:57.518770+00:00,7534242481,#security
+The_Hardware_Hacking_Handbook_Breaking_Embedded_Security_With_Hardware,2025-07-25 21:11:01.328094+00:00,7534242481,#hardware #security
+the-candlestick-trading-bible,2025-07-25 21:11:02.009054+00:00,7534242481,#other
+the-web-application-hackers-handbook,2025-07-25 21:11:02.687146+00:00,7534242481,#security
+Think Like a CTO,2025-07-25 21:18:10.329081+00:00,7534242481,#other
+mathematics,2025-07-25 21:18:10.990927+00:00,7534242481,#mathematics #engineering
+TypeScript Quickly,2025-07-25 21:18:11.652720+00:00,7534242481,#ts #software #programming
+Vim Reference Guide,2025-07-25 21:18:12.368055+00:00,7534242481,#vim #editor
+Vue.js 3 Design Patterns and Best Practices,2025-07-25 21:18:13.161870+00:00,7534242481,#vue #web #js #software #programming
+Web Application Security Exploitation,2025-07-25 21:18:13.921920+00:00,7534242481,#security
+Web_Application_Architecture_Principles_Protocols_and_Practices,2025-07-25 21:18:18.500122+00:00,7534242481,#web #software
+What is Tokenization,2025-07-25 21:18:20.149453+00:00,7534242481,#software
+Wiley Data Structures and Algorithms in Java 6th Edition,2025-07-25 21:18:20.901568+00:00,7534242481,#data_structure #mathematics #cs #algorithm
+Windows 10 Troubleshooting,2025-07-25 21:18:21.566968+00:00,7534242481,#os
+Wireless_Security_Architecture_Designing_and_Maintaining_Secure,2025-07-25 21:18:22.300250+00:00,7534242481,#security #network
+Wireshark for Network Forensics,2025-07-25 21:18:22.961327+00:00,7534242481,#wireshark #network #security
+Wireshark_Fundamentals_A_Network_Engineer’s_Handbook_to_Analyzing,2025-07-25 21:18:23.622891+00:00,7534242481,#wireshark #network
+Working Effectively with Legacy,2025-07-25 21:18:24.293834+00:00,7534242481,#software
+pub_cryptography,2025-07-25 21:18:24.969797+00:00,7534242481,#software
+cryptography-theory-and-practice,2025-07-25 21:18:25.628057+00:00,7534242481,#cryptography #software #mathematics
+cryptography,2025-07-25 21:18:29.425693+00:00,7534242481,#cryptography #mathematics
+cryptography_made_simple_information_security_and_cryptography,2025-07-25 21:19:29.316201+00:00,7534242481,#cryptography
