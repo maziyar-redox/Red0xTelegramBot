@@ -30,18 +30,6 @@
 
 ---
 
-##  Overview
-
-<code>❯ REPLACE-ME</code>
-
----
-
-##  Features
-
-<code>❯ REPLACE-ME</code>
-
----
-
 ##  Project Structure
 
 ```sh
@@ -69,11 +57,11 @@
 			<table>
 			<tr>
 				<td><b><a href='https://github.com/maziyar-redox/Red0xTelegramBot/blob/master/main.py'>main.py</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Application Entry point</code></td>
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/maziyar-redox/Red0xTelegramBot/blob/master/requirements.txt'>requirements.txt</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Requirements file</code></td>
 			</tr>
 			</table>
 		</blockquote>
@@ -84,7 +72,7 @@
 			<table>
 			<tr>
 				<td><b><a href='https://github.com/maziyar-redox/Red0xTelegramBot/blob/master/Red0xBot/config.py'>config.py</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
+				<td><code>❯ Bot config</code></td>
 			</tr>
 			</table>
 			<details>
@@ -93,11 +81,11 @@
 					<table>
 					<tr>
 						<td><b><a href='https://github.com/maziyar-redox/Red0xTelegramBot/blob/master/Red0xBot/utils/translation.py'>translation.py</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ Bot buttons</code></td>
 					</tr>
 					<tr>
 						<td><b><a href='https://github.com/maziyar-redox/Red0xTelegramBot/blob/master/Red0xBot/utils/time_format.py'>time_format.py</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ Datetime formatter</code></td>
 					</tr>
 					</table>
 				</blockquote>
@@ -108,11 +96,11 @@
 					<table>
 					<tr>
 						<td><b><a href='https://github.com/maziyar-redox/Red0xTelegramBot/blob/master/Red0xBot/server/stream_routes.py'>stream_routes.py</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ Http routing for downloading file</code></td>
 					</tr>
 					<tr>
 						<td><b><a href='https://github.com/maziyar-redox/Red0xTelegramBot/blob/master/Red0xBot/server/exceptions.py'>exceptions.py</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ Server exceptions</code></td>
 					</tr>
 					</table>
 				</blockquote>
@@ -123,7 +111,7 @@
 					<table>
 					<tr>
 						<td><b><a href='https://github.com/maziyar-redox/Red0xTelegramBot/blob/master/Red0xBot/bot/clients.py'>clients.py</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ telegram clients for some features</code></td>
 					</tr>
 					</table>
 					<details>
@@ -132,11 +120,11 @@
 							<table>
 							<tr>
 								<td><b><a href='https://github.com/maziyar-redox/Red0xTelegramBot/blob/master/Red0xBot/bot/plugins/admin.py'>admin.py</a></b></td>
-								<td><code>❯ REPLACE-ME</code></td>
+								<td><code>❯ Admin template</code></td>
 							</tr>
 							<tr>
 								<td><b><a href='https://github.com/maziyar-redox/Red0xTelegramBot/blob/master/Red0xBot/bot/plugins/start.py'>start.py</a></b></td>
-								<td><code>❯ REPLACE-ME</code></td>
+								<td><code>❯ User template</code></td>
 							</tr>
 							</table>
 						</blockquote>
@@ -149,7 +137,7 @@
 					<table>
 					<tr>
 						<td><b><a href='https://github.com/maziyar-redox/Red0xTelegramBot/blob/master/Red0xBot/db/csv_db.py'>csv_db.py</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
+						<td><code>❯ Book db</code></td>
 					</tr>
 					</table>
 				</blockquote>
@@ -214,14 +202,6 @@ Run the test suite using the following command:
 ❯ pytest
 ```
 
-
----
-##  Project Roadmap
-
-- [X] **`Task 1`**: <strike>Implement feature one.</strike>
-- [ ] **`Task 2`**: Implement feature two.
-- [ ] **`Task 3`**: Implement feature three.
-
 ---
 
 ##  Contributing
@@ -269,7 +249,7 @@ Run the test suite using the following command:
 
 ##  License
 
-This project is protected under the [SELECT-A-LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
+This project is protected under the [MIT](https://choosealicense.com/licenses/mit) License. For more details, refer to the [LICENSE](https://github.com/maziyar-redox/Red0xTelegramBot/blob/main/LICENSE) file.
 
 ---
 
